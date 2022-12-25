@@ -59,6 +59,26 @@ fun forTest(){
     for((index, value) in col.withIndex()){
         println("index:$index -----> value:$value ")
     }
+    for( i in 1..3){
+        println(i)
+    }
+    (1..3).forEach{x -> println(x)}
+}
+
+/**
+ * label 标签关键字
+ */
+fun labelTest(){
+    val intArray = intArrayOf(1,2,3,4,5)
+    intArray.forEach  here@{i->
+        if (i == 3) return@here
+        println(i)
+    }
+    println("@forEach")
+    intArray.forEach{i->
+        if (i in 2..4) return@forEach
+        println(i)
+    }
 }
 
 fun main() {
@@ -73,4 +93,6 @@ fun main() {
     inTest(999)
     println("======================for 循环=====================")
     forTest()
+    println("======================label 标签=====================")
+    labelTest()
 }
