@@ -95,4 +95,51 @@ fun main() {
     forTest()
     println("======================label 标签=====================")
     labelTest()
+
+    val a = 20
+    val b = -20
+    val strA = "1"
+    val col = listOf("1","2","3")
+    println(+b)
+    println(-a)
+    println(false.not())
+    println(!false)
+    println(a.inc())
+    println(b.dec())
+    println((b..a)) // -20  range to 20
+    println(strA in col) // 不能为原始类型？
+    println(strA !in col) // 不能为原始类型？
+
+    println(col[2])
+    val demos = listOf(Demo(),Demo(),Demo())
+    val demo = Demo()
+    println(" ================比较操作符=====================")
+     // 引用比较
+    println(demo === demos[0])
+    println(demo !== demos[0])
+    // equals 比较
+    println(demo == demos[0])
+    println(demo != demos[0])
+
+    val name = null
+    val displayName = name?:"unknown"
+    println(" ================   elvis presley =====================")
+    println(displayName)
+
+    println(" ================   infix 中缀表达式 =====================")
+    println("infix " add "test")
+}
+
+infix fun String.add(name:String):String{
+    return this + name
+}
+
+class Demo{
+    var a :String = ""
+    override fun equals(other: Any?): Boolean {
+        if (other != null && other is Demo){
+            return other.a == a
+        }
+        return false
+    }
 }
