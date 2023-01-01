@@ -5,6 +5,10 @@ fun String.println() {
     println(this);
 }
 
+fun <T> List<T>.println() {
+    println(this);
+}
+
 /**
  * 成员变量
  */
